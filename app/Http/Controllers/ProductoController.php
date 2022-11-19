@@ -86,7 +86,7 @@ class ProductoController extends Controller
     public function update(Request $request, Producto $producto)
     {
         $request->validate([
-            'nombre' => 'required', 'apellido','curp' => 'required', 'imagen' => 'required'
+            'nombre' => 'required', 'apellido','curp' => 'required'
         ]);
         $prod = $request->all();
          if($imagen = $request->file('imagen')){

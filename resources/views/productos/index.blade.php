@@ -5,20 +5,20 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+    <div class="py-5 "   >
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" >
+            <div class="bg-white overflow-hidden shadow-2xl sm:rounded-lg" >
                 
-                <a type="button" href="{{ route('productos.create') }}" class="bg-indigo-500 px-12 py-2 rounded text-gray-200 font-semibold hover:bg-indigo-800 transition duration-200 each-in-out">Crear</a>
-                <table class="table-fixed w-full">
+                <a type="button" href="{{ route('productos.create') }}" class="bg-red-500 px-12 py-2 rounded text-gray-200 font-semibold hover:bg-red-800 transition duration-200 each-in-out">Crear</a>
+                <table class="table-fixed w-full border-separate border border-slate-500">
                 <thead>
-                    <tr class="bg-gray-800 text-white">
-                        <th class="border px-4 py-2">No</th>
-                        <th class="border px-4 py-2">NOMBRE</th>
-                        <th class="border px-4 py-2">APELLIDO</th>
-                        <th class="border px-4 py-2">CURP</th>
-                        <th class="border px-4 py-2">FOTO</th>
-                        <th class="border px-4 py-2">EDITAR/BORRAR</th>
+                    <tr class="bg-indigo-800 text-white  "  >
+                        <th class="border border-slate-600">No</th>
+                        <th class="border border-slate-600">NOMBRE</th>
+                        <th class="border border-slate-600">APELLIDO</th>
+                        <th class="border border-slate-600">CURP</th>
+                        <th class="border border-slate-600">FOTO</th>
+                        <th class="border border-slate-600">EDITAR/BORRAR</th>
                     </tr>  
                 </thead>   
                 <tbody>
@@ -35,13 +35,13 @@
                         <td class="border px-4 py-2">
                             <div class="flex justify-center rounded-lg text-lg" role="group">
                                 <!-- botón editar -->
-                                <a href="{{ route('productos.edit', $producto->id) }}" class="rounded bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4">Editar</a>
+                                <a href="{{ route('productos.edit', $producto->id) }}" class="rounded bg-indigo-900 hover:bg-red-600 text-white font-bold py-2 px-4">Editar</a>
 
                                 <!-- botón borrar -->
                                 <form action="{{ route('productos.destroy', $producto->id) }}" method="POST" class="formEliminar">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="rounded bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4">Borrar</button>
+                                    <button type="submit" class="rounded bg-indigo-900 hover:bg-red-500 text-white font-bold py-2 px-4">Borrar</button>
                                 </form>
                             </div>
                         </td>
