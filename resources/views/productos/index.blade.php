@@ -13,26 +13,30 @@
                 <table class="table-fixed w-full border-separate border border-slate-500">
                 <thead>
                     <tr class="bg-indigo-800 text-white  "  >
-                        <th class="border border-slate-600">No</th>
-                        <th class="border border-slate-600">NOMBRE</th>
-                        <th class="border border-slate-600">APELLIDO</th>
-                        <th class="border border-slate-600">CURP</th>
-                        <th class="border border-slate-600">FOTO</th>
+                        <th style="width:40px;" class="border border-slate-600 margin-top:10px">No</th>
+                        <th class="border border-slate-600">DOCUMENTOS</th>
+                        <th style="width:25%;" class="border border-slate-600">CURP</th>
+                        <th class="border border-slate-600">DEPORTISTA</th>
+                        <th class="border border-slate-600">DISCIPLINAS</th>
                         <th class="border border-slate-600">EDITAR/BORRAR</th>
                     </tr>  
                 </thead>   
                 <tbody>
                     @foreach ($productos as $producto)
                     <tr>
-                        <td style="display: none;">{{$producto->id}}</td>
-                        <td>{{$producto->id}}</td>
-                        <td>{{$producto->nombre}}</td>
-                        <td>{{$producto->apellido}}</td>
-                        <td>{{$producto->curp}}</td>
-                        <td  class="border px-14 py-1">
+                        
+                        <td style="display:none;" >{{$producto->id}}</td>
+
+                        <td style="width:15px; text-align: center;" >{{$producto->id}}</td>
+
+                        <td style="width:15px; text-align: center;" class="border px-14 py-1" >
                             <img src="/imagen/{{$producto->imagen}}" width="60%">
-                        </td>                        
-                        <td class="border px-4 py-2">
+                        </td>  
+                        <td style="width:15px; text-align: center;" class="border px-14 py-1">{{$producto->curp}}</td>
+                        <td style="width:15px; text-align: center;" class="border px-14 py-1">{{$producto->nombre}}</td>
+                        <td style="width:15px; text-left;" class="border px-14 py-1 align-bottom"><br>1) {{$producto->pdeporte}}<br>2) {{$producto->sdeporte}}<br>3) {{$producto->tdeporte}}
+                        </td>                      
+                        <td style="width:15px; text-right;" class="border px-4 py-2">
                             <div class="flex justify-center rounded-lg text-lg" role="group">
                                 <!-- botón editar -->
                                 <a href="{{ route('productos.edit', $producto->id) }}" class="rounded bg-indigo-900 hover:bg-red-600 text-white font-bold py-2 px-4">Editar</a>

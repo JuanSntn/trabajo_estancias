@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('apellido');
             $table->string('curp');
             $table->string('imagen');
+            $table->string('deportes')->nullable();
+            $table->string('pdeporte')->nullable();
+            $table->string('sdeporte')->nullable();
+            $table->string('tdeporte')->nullable();
             $table->timestamps();
 
         });

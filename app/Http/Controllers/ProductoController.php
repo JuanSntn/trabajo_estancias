@@ -109,7 +109,18 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
+        
+
         $producto->delete();
         return redirect()->route('productos.index');
     }
+
+    public function delete(Producto $producto)
+    {
+        $url=str_replace('20','public', $producto->imagen);
+        ProductoController::delete($url);
+
+
+    }
+
 }
